@@ -16,3 +16,11 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
     pubdate = models.DateField()
+
+class Store(models.Model):
+    name = models.CharField(max_length=300)
+    registered_users = models.PositiveIntegerField()
+    hoge = models.CharField(max_length=100, default='fuga')
+
+    class Meta:
+        db_table = 'store'
